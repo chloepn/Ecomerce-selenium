@@ -8,7 +8,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Objects;
 
 import static helpers.Constant.BROWSER;
@@ -21,42 +24,60 @@ public class WebDriverSingleton {
     //Selenium WebDrive by default is not thread-safe
     //
     private static ThreadLocal <WebDriver> driver = new ThreadLocal<>();
-
-
-    //getLocalDriver() need webDriverManager
-    //tearDown() to shut down all Có instant drivers ( and all window)
     /***
-     * getDriver() return driver
+     * @return the existent driver, otherwise, create new driver
      */
-    public static WebDriver getDriver (){
-        // setup driver automatically using WebDriverManager
-        WebDriverManager.chromedriver().setup();
+    public static WebDriver getDriver () throws MalformedURLException {
+        if (driver.get() == null) {
+            driver.set(getDriverHelper());
+        }
+        return driver.get();
+    }
+
+    /***
+     *
+     * @return current driver
+     */
+
+    private static WebDriver getDriverHelper() throws MalformedURLException {
         // Create ChromeOptions objects
         Capabilities options = BrowserCapabilities.getBrowserCapabilities(BROWSER);
         //use REMOTEBROWSER is available otherwise, use local BROWSER
         if(StringUtils.isEmpty(REMOTEBROWSER)){
             getDriverLocal(BROWSER,options);
         }else{
-            //todo: create driver with remote selenium Grid
+            driver.set(new RemoteWebDriver(new URL(REMOTEBROWSER), Objects.requireNonNull(options)));
         }
         return driver.get();
     }
 
+    /***
+     *
+     * @param browser
+     * @param options
+     * @return current driver
+     */
     public static WebDriver getDriverLocal(String browser, Capabilities options){
         switch(browser){
             case("chrome"):
+                // setup driver automatically using WebDriverManager
+                WebDriverManager.chromedriver().setup();
                 driver.set(new ChromeDriver((ChromeOptions) Objects.requireNonNull(options)));
             case("fireFox"):
+                WebDriverManager.firefoxdriver().setup();
                 driver.set(new FirefoxDriver((FirefoxOptions) Objects.requireNonNull(options)));
         }
         return driver.get();
     }
 
+    /***
+     * quit() the current driver instance and kill its thread
+     */
     public static void tearDown(){
-        //todo
         //driver.get() is to get current WebDriver thread
         if(driver.get() !=null){
             driver.get().quit();
+            driver.remove();
         }
     }
 
