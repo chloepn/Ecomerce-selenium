@@ -1,4 +1,4 @@
-package Driver;
+package main.java.Driver;
 
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.chrome.ChromeOptions;

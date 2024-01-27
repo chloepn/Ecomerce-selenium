@@ -1,4 +1,4 @@
-package Driver;
+package main.java.Driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.lang3.StringUtils;
@@ -14,8 +14,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Objects;
 
-import static helpers.Constant.BROWSER;
-import static helpers.Constant.REMOTEBROWSER;
+import static helpers.Constant.*;
 
 /**
  * This class is to create the WebDriver with according BrowserCapabilities
@@ -23,7 +22,7 @@ import static helpers.Constant.REMOTEBROWSER;
 public class WebDriverSingleton {
     //Selenium WebDrive by default is not thread-safe
     //
-    private static ThreadLocal <WebDriver> driver = new ThreadLocal<>();
+    private static final ThreadLocal <WebDriver> driver = new ThreadLocal<>();
     /***
      * @return the existent driver, otherwise, create new driver
      */
@@ -63,6 +62,7 @@ public class WebDriverSingleton {
                 // setup driver automatically using WebDriverManager
                 WebDriverManager.chromedriver().setup();
                 driver.set(new ChromeDriver((ChromeOptions) Objects.requireNonNull(options)));
+                driver.get().get(TESTURL);
             case("fireFox"):
                 WebDriverManager.firefoxdriver().setup();
                 driver.set(new FirefoxDriver((FirefoxOptions) Objects.requireNonNull(options)));
