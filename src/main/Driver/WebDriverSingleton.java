@@ -1,4 +1,4 @@
-package main.java.Driver;
+package Driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.lang3.StringUtils;
@@ -14,7 +14,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Objects;
 
-import static helpers.Constant.*;
+import static helper.Constant.*;
 
 /**
  * This class is to create the WebDriver with according BrowserCapabilities
@@ -43,11 +43,9 @@ public class WebDriverSingleton {
         Capabilities options = BrowserCapabilities.getBrowserCapabilities(BROWSER);
         //use REMOTEBROWSER is available otherwise, use local BROWSER
         if(StringUtils.isEmpty(REMOTEBROWSER)){
-            getDriverLocal(BROWSER,options);
-        }else{
-            driver.set(new RemoteWebDriver(new URL(REMOTEBROWSER), Objects.requireNonNull(options)));
+            return getDriverLocal(BROWSER,options);
         }
-        return driver.get();
+        return new RemoteWebDriver(new URL(REMOTEBROWSER), Objects.requireNonNull(options));
     }
 
     /***
@@ -56,18 +54,18 @@ public class WebDriverSingleton {
      * @param options
      * @return current driver
      */
-    public static WebDriver getDriverLocal(String browser, Capabilities options){
-        switch(browser){
-            case("chrome"):
+    public static WebDriver getDriverLocal(String browser, Capabilities options) {
+        switch (browser) {
+            case ("chrome"):
                 // setup driver automatically using WebDriverManager
                 WebDriverManager.chromedriver().setup();
-                driver.set(new ChromeDriver((ChromeOptions) Objects.requireNonNull(options)));
-                driver.get().get(TESTURL);
-            case("fireFox"):
-                WebDriverManager.firefoxdriver().setup();
-                driver.set(new FirefoxDriver((FirefoxOptions) Objects.requireNonNull(options)));
+                return new ChromeDriver((ChromeOptions) Objects.requireNonNull(options));
+            case ("firefox"):
+                //WebDriverManager.firefoxdriver().setup();
+                WebDriverManager.getInstance(FirefoxDriver.class).setup();
+                return new FirefoxDriver((FirefoxOptions) Objects.requireNonNull(options));
         }
-        return driver.get();
+        return null;
     }
 
     /***
@@ -80,5 +78,4 @@ public class WebDriverSingleton {
             driver.remove();
         }
     }
-
 }

@@ -1,4 +1,4 @@
-package main.java.Driver;
+package Driver;
 
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -14,9 +14,9 @@ public class BrowserCapabilities {
      */
     public static Capabilities getBrowserCapabilities(String browser){
         switch(browser){
-            case "Chrome":
+            case "chrome":
                 return getChromeCapabilities();
-            case "FireFox":
+            case "firefox":
                 return getFirefoxCapabilities();
         }
         return null;
@@ -27,7 +27,7 @@ public class BrowserCapabilities {
      */
     private static ChromeOptions getChromeCapabilities(){
         ChromeOptions options = new ChromeOptions();
-        options.setCapability("os", "MacOS");
+        //options.setCapability("platformName", "macOSSonoma");
         return options;
     }
     /***
@@ -35,7 +35,7 @@ public class BrowserCapabilities {
      */
     private static FirefoxOptions getFirefoxCapabilities(){
         FirefoxOptions options = new FirefoxOptions();
-        options.setCapability("os","MacOS");
+        //options.setCapability("platformName", "macOSSonoma");
         return options;
     }
 
