@@ -1,6 +1,7 @@
 package Driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import lombok.SneakyThrows;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
@@ -26,6 +27,7 @@ public class WebDriverSingleton {
     /***
      * @return the existent driver, otherwise, create new driver
      */
+    @SneakyThrows
     public static WebDriver getDriver () throws MalformedURLException {
         if (driver.get() == null) {
             driver.set(getDriverHelper());
@@ -37,7 +39,7 @@ public class WebDriverSingleton {
      *
      * @return current driver
      */
-
+    @SneakyThrows
     private static WebDriver getDriverHelper() throws MalformedURLException {
         // Create ChromeOptions objects
         Capabilities options = BrowserCapabilities.getBrowserCapabilities(BROWSER);

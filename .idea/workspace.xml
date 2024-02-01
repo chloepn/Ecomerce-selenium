@@ -5,17 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfb28455-2c43-490b-8007-b6c73cb093a7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/page/basePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/page/mainPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/page/dogFood.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/page/dogSupply.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Driver/BrowserCapabilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Driver/BrowserCapabilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Driver/WebDriverSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Driver/WebDriverSingleton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/helpers/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/helper/Constant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/myTestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/testbase/myTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Driver/WebDriverSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Driver/WebDriverSingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/page/basePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/page/basePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/page/mainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/page/mainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/testbase/myTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/testbase/myTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,49 +128,34 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/Driver/WebDriverSingleton.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="31" />
+          <url>file://$PROJECT_DIR$/src/test/testbase/myTest.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/Driver/WebDriverSingleton.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="32" />
+          <url>file://$PROJECT_DIR$/src/main/page/mainPage.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/page/basePage.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="37" />
+          <line>19</line>
+          <option name="timeStamp" value="62" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/page/basePage.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/page/mainPage.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="39" />
+          <line>21</line>
+          <option name="timeStamp" value="63" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/page/basePage.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="40" />
+          <line>20</line>
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/page/mainPage.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/page/mainPage.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/page/mainPage.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="43" />
+          <line>44</line>
+          <option name="timeStamp" value="67" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

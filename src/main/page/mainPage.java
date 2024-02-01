@@ -1,11 +1,12 @@
 package page;
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import java.net.MalformedURLException;
+
 
 public class mainPage extends basePage{
         @FindBy(xpath = "//div[@class='desktop-header__container js-nav-spa-test-activation-trigger']//input[@id='search-autocomplete']")
@@ -21,7 +22,7 @@ public class mainPage extends basePage{
         WebElement pharmacy;
 
         @FindBy(xpath = "//div[@data-current-zone='11']//div[@class = 'wallpaper-module_cms-wallpaper__Dob4W wallpaper-module_cms-wallpaper--horizontal-padding-default__-hOmh wallpaper-module_cms-wallpaper--top-padding-default__2Xk9J wallpaper-module_cms-wallpaper--bottom-padding-default__PAzzu']//li[@aria-posinset ='1']")
-        static WebElement shopByPet_Dog;
+        WebElement shopByPet_Dog;
 
         @FindBy(xpath = "//div[@data-current-zone='29']//ul[@class = 'kib-carousel__content kib-carousel__content--scroll-snap']//li[@aria-posinset ='1']")
         WebElement productBrand;
@@ -29,24 +30,21 @@ public class mainPage extends basePage{
         @FindBy(xpath = "//div[@id = 'footer']//button[@class = 'kib-button-new kib-button-new--secondary back-to-top__btn']")
         WebElement backToTop;
 
-        private static WebDriver driver;
+        private WebDriver driver;
         /***
          * constructor
          */
         public mainPage() throws MalformedURLException {
                 super();
-                basePage m = new basePage();
-                this.driver = m.getter();
         }
 
         /***
          * clicks on shopByPet_Dog and redirect to dogPage
          */
-        public static void shopDogProduct() throws MalformedURLException {
+        public dogSupply shopDogProduct() throws MalformedURLException {
                 System.out.println("shopByPet_Dog");
-                basePage m = new basePage();
-                PageFactory.initElements(driver,m);
                 shopByPet_Dog.click();
+                return new dogSupply();
         }
 
 
