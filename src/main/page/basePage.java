@@ -18,9 +18,9 @@ public class basePage {
     public basePage() throws MalformedURLException {
         System.out.println("basePage");
         this.driver = WebDriverSingleton.getDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(180));
         PageFactory.initElements(driver,this);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(180));
     }
 
 }

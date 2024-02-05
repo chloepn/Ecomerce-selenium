@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Practice Suite">
+<suite name="Sanity Suite">
+
     <test name="myTest">
+        <parameter name="filter" value= "byChewy,wellness,rawhideFree,natural,adult,small,dryFood,treats,dehydrated"/>
         <classes>
             <!-- packageName.className-->
-            <class name="testbase.myTest"/>
+            <class name="sanity.addDogPremiumFoodFilterSorter"/>
         </classes>
-    </test> <!-- Test -->
+    </test>
 
-</suite> <!-- Suite -->
+</suite>
